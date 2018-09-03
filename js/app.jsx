@@ -13,29 +13,29 @@ document.addEventListener('DOMContentLoaded', function(){
             super(props);
             this.state = {
                 text: "",
-                items: []
+                items: JSON.parse(localStorage.getItem('items') || "[]")
             };
         }
         
         handleChange = (e) => {
             this.setState({
-                text: event.currentTarget.value
+                text: e.currentTarget.value
             })
         }
         
         addItem = (e) => {
             let newItem = this.state.text;
+            let items = [];
             if (localStorage.getItem('items') == null){
-                let items = [];
                 items.push(newItem);
                 localStorage.setItem("items", JSON.stringify(items));
             }else{
-                let items = JSON.parse(localStorage.getItem('items'));
+                items = JSON.parse(localStorage.getItem('items'));
                 items.push(newItem);
                 localStorage.setItem('items', JSON.stringify(items))
             }
             this.setState({
-                items: JSON.parse(localStorage.getItem('items'))
+                items: items
             })
             
             console.log(newItem);
@@ -54,10 +54,10 @@ document.addEventListener('DOMContentLoaded', function(){
         
         render(){
             return(
-                <div>            
+                <div className="flex-container">
                     <Title/>
                     <ToDoForm onClick={this.addItem} onChange={this.handleChange}/>
-                    <ToDoList items={this.state.items} onClick={this.removeItem}/>
+                    <ToDoList items={this.state.items} onClick={this.removeItem}/>     
                 </div>
             )
         }

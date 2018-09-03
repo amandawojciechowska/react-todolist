@@ -5,8 +5,8 @@ class ToDoForm extends React.Component{
         return (
             <div>
                 <form>
-                    <input type="text" placeholder="what i need to do, today?" value={this.props.text} onChange={this.props.onChange}></input>
-                    <input type="button" value="Add To List" onClick={this.props.onClick}></input>
+                    <input className="text" type="text" placeholder="what i need to do, today?" value={this.props.text} onChange={this.props.onChange}></input>
+                    <input className="button" type="button" value="+" onClick={this.props.onClick}></input>
                 </form>
             </div>
         )
