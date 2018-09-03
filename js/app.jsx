@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function(){
         
         addItem = (e) => {
             let newItem = this.state.text;
+            if (newItem === "") return;
             let items = [];
             if (localStorage.getItem('items') == null){
                 items.push(newItem);
@@ -37,8 +38,6 @@ document.addEventListener('DOMContentLoaded', function(){
             this.setState({
                 items: items
             })
-            
-            console.log(newItem);
         }
         
         

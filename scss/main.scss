@@ -40,9 +40,9 @@ form{
         outline: none;
     }
     .text{
-        width: 350px;
+        width: 400px;
         margin-bottom: 35px;
-        margin-right: 20px;
+        margin-right: 25px;
         padding-left: 10px;
         background-color: #970747;
     }
@@ -79,7 +79,7 @@ form{
         li{
             display: flex;
             justify-content: space-between;
-            font-size: 24px;
+            font-size: 20px;
             list-style: none;
             color: $primary-color;
             padding: 10px;
