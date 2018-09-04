@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', function(){
                 localStorage.setItem('items', JSON.stringify(items))
             }
             this.setState({
-                items: items
+                items: items,
+                text: ""
             })
         }
         
@@ -55,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function(){
             return(
                 <div className="flex-container">
                     <Title/>
-                    <ToDoForm onClick={this.addItem} onChange={this.handleChange}/>
+                    <ToDoForm onClick={this.addItem} text={this.state.text} onChange={this.handleChange}/>
                     <ToDoList items={this.state.items} onClick={this.removeItem}/>     
                 </div>
             )
