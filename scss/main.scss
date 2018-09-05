@@ -32,22 +32,22 @@ body{
 
 form{
     input[type=text], input[type=button]{
-        height: 50px;
-        font-size: 20px;
+        height: 3em;
+        font-size: 1.3em;
         color: $primary-color;
         border: 0.5px solid $primary-color;
         border-radius: 3px;
         outline: none;
     }
     .text{
-        width: 400px;
+        width: 20em;
         margin-bottom: 35px;
         margin-right: 25px;
         padding-left: 10px;
         background-color: #970747;
     }
     .button{
-        width: 50px;
+        width: 3em;
         background-color: $background-color;
     }
 }
@@ -71,7 +71,7 @@ form{
 
 
 .list{
-    width: 450px;
+    width: 30em;
     ul{
         display: flex;
         flex-direction: column;
@@ -79,7 +79,7 @@ form{
         li{
             display: flex;
             justify-content: space-between;
-            font-size: 20px;
+            font-size: 1.5em;
             list-style: none;
             color: $primary-color;
             padding: 10px;
@@ -89,7 +89,7 @@ form{
             width: 29px;
             height: 29px;
             color: $primary-color;
-            font-size: 18px;
+            font-size: 0.8em;
             border: 0.5px solid $primary-color;
             border-radius: 3px;
             outline: none;
@@ -101,7 +101,7 @@ form{
             height: 26px;
             margin-right: 8px;
             cursor: pointer;
-            font-size: 25px;
+            font-size: 1em;
             visibility: hidden;
         }
 
@@ -120,6 +120,34 @@ form{
         input[type=checkbox]:checked:after {
             content: "\2714";
             font-weight: bold;
+        }
+    }
+}
+
+@media only screen and (max-width: 575px){
+    form{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        input[type=text], input[type=button]{
+            height: 3em;
+            font-size: 1em;
+        }
+        .text{
+            width: 18em;
+            margin-bottom: 20px;
+            margin-right: 0;
+        }
+        .button{
+            width: 3em;
+            margin-bottom: 35px;
+        }
+    }
+    .list{
+        width: 20em;
+        ul li{
+            font-size: 1.2em;
         }
     }
 }
