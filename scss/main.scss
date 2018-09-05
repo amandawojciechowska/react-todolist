@@ -32,8 +32,8 @@ body{
 
 form{
     input[type=text], input[type=button]{
-        height: 3em;
-        font-size: 1.3em;
+        height: 2.8em;
+        font-size: 1.2em;
         color: $primary-color;
         border: 0.5px solid $primary-color;
         border-radius: 3px;
@@ -47,7 +47,7 @@ form{
         background-color: #970747;
     }
     .button{
-        width: 3em;
+        width: 2.7em;
         background-color: $background-color;
     }
 }
@@ -79,7 +79,7 @@ form{
         li{
             display: flex;
             justify-content: space-between;
-            font-size: 1.5em;
+            font-size: 1.4em;
             list-style: none;
             color: $primary-color;
             padding: 10px;
@@ -116,13 +116,25 @@ form{
             border: 1px solid $background-color;
             border-radius: 3px;
         }
-
+        
         input[type=checkbox]:checked:after {
             content: "\2714";
             font-weight: bold;
+            animation: jelly 0.7s ease;
         }
     }
 }
+
+@keyframes jelly {
+    from { transform: scale(1, 1); }
+    30% { transform: scale(1.25, 0.75); }
+    40% { transform: scale(0.75, 1.25); }
+    50% { transform: scale(1.15, 0.85); }
+    65% { transform: scale(0.95, 1.05); }
+    75% { transform: scale(1.05, 0.95); }
+    to { transform: scale(1, 1); }
+}
+
 
 @media only screen and (max-width: 575px){
     form{
